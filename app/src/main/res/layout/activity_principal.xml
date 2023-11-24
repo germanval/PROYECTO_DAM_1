@@ -40,5 +40,27 @@
         android:padding="16dp"
         android:layout_marginTop="16dp"/>
 
+    <ImageView
+        android:id="@+id/imageViewDestacados"
+        android:layout_width="147dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="376dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/destacados_foreground" />
+
+    <Button
+        android:id="@+id/btnDestacados"
+        android:layout_width="106dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Destacados"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDestacados" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

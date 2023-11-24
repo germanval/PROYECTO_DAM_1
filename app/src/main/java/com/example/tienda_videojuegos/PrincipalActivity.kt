@@ -32,5 +32,12 @@ class PrincipalActivity : AppCompatActivity() {
             val intent = Intent(this, Inicio::class.java)
             startActivity(intent)
         }
+
+        val btnDestacados = findViewById<Button>(R.id.btnDestacados)
+        btnDestacados.setOnClickListener {
+            // Al hacer clic en el botón, iniciar la actividad de juegos destacados
+            val intent = Intent(this, JuegosDestacadosActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
