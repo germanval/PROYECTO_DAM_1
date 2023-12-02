@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.widget.ImageView
+
 class NoticiasAdapter(private var noticias: List<Noticia>) : RecyclerView.Adapter<NoticiasAdapter.NoticiaViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoticiaViewHolder {
@@ -17,7 +19,11 @@ class NoticiasAdapter(private var noticias: List<Noticia>) : RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: NoticiaViewHolder, position: Int) {
         val noticia = noticias[position]
+        // Establecer el título y autor en los TextView
+
         holder.bind(noticia)
+
+
     }
 
     override fun getItemCount(): Int = noticias.size

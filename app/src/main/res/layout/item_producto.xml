@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/item_producto.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/imageViewProducto"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        tools:srcCompat="@mipmap/foreground_destacados" />
+
+    <TextView
+        android:id="@+id/textViewTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewPrecio"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="-49dp"
+        android:text="Tipo: Consola" />
+
+    <TextView
+        android:id="@+id/textViewNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageViewProducto"
+        android:layout_marginStart="25dp"
+        android:text="Producto" />
+
+
+    <TextView
+        android:id="@+id/textViewPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewNombre"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="38dp"
+        android:text="Precio: S/.0.00" />
+
+</RelativeLayout>

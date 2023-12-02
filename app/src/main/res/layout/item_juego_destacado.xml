@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="8dp">
 
-    <!-- Aquí puedes agregar vistas para mostrar información sobre el juego, como título, imagen, etc. -->
-    <ImageView
-        android:id="@+id/imageViewJuego"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@android:drawable/ic_menu_gallery"
-        />
+
+
 
     <TextView
         android:id="@+id/textViewTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Título"
+        android:textSize="16sp"
+        android:textStyle="bold"
+
         android:layout_toEndOf="@id/imageViewJuego"
-        android:layout_marginStart="8dp"/>
+        android:layout_marginStart="20dp"/>
 
     <TextView
         android:id="@+id/textViewAutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewTitulo"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="90dp"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
         android:text="Autor" />
+
+    <ImageView
+        android:id="@+id/imageViewJuego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/foreground_destacados_round" />
 
     <!-- Agrega más vistas según sea necesario -->
 

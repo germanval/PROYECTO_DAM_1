@@ -39,5 +39,12 @@ class PrincipalActivity : AppCompatActivity() {
             val intent = Intent(this, JuegosDestacadosActivity::class.java)
             startActivity(intent)
         }
+       val btnProductos = findViewById<Button>(R.id.btnProductos)
+        // Agregar un OnClickListener al botón
+        btnProductos.setOnClickListener {
+            // Crear un Intent para ir a la actividad de productos
+            val intent = Intent(this, Productos::class.java)
+            startActivity(intent)
+        }
     }
 }

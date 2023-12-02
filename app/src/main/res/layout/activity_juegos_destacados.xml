@@ -6,12 +6,32 @@
     android:orientation="vertical"
     tools:context=".JuegosDestacadosActivity">
 
+    <!-- Título -->
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="JUEGOS DESTACADOS"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:background="#000000"
+        android:textColor="#00FF00"
+        android:padding="8dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewJuegosDestacados"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textViewTitulo"
         android:padding="16dp"
+        android:background="#000000"
         android:clipToPadding="false"
         android:scrollbars="vertical"/>
 
+
+
+
 </RelativeLayout>
+

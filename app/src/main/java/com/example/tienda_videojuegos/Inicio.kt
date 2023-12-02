@@ -30,7 +30,7 @@ class Inicio : AppCompatActivity() {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
             } else {
 
-                val db = BDRegistro(this, null)
+                val db = DBHelper(this)
                 db.crearRegistro(fecha, precio, consola, tipo)
                 Toast.makeText(this, "Se registro el producto exitosamente", Toast.LENGTH_LONG)
                     .show()
