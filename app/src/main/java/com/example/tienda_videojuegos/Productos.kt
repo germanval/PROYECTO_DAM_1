@@ -1,18 +1,18 @@
 package com.example.tienda_videojuegos
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import android.util.Log
+import android.widget.Toast
 import android.database.Cursor
-
+import android.content.Intent
 
 class Productos : AppCompatActivity() {
 
-    private var adaptadorProductos: AdaptadorProductos? = null
+    private lateinit var adaptadorProductos: AdaptadorProductos
     private lateinit var recyclerViewProductos: RecyclerView
     private lateinit var bdRegistro: DBHelper
+    private var listaProductos: MutableList<Producto> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +20,9 @@ class Productos : AppCompatActivity() {
 
         // Inicializa tu base de datos
         bdRegistro = DBHelper(this)
+
+        // Configura y muestra el RecyclerView con los productos
+        setupRecyclerView()
 
         // Agrega un producto (esto es solo un ejemplo, deberías hacerlo según tu lógica de la aplicación)
         val producto = Producto(
@@ -35,27 +38,29 @@ class Productos : AppCompatActivity() {
             producto.tipo
         )
 
-        // Configura y muestra el RecyclerView con los productos
-        setupRecyclerView()
-
-
+        // Obtiene los productos desde la base de datos
+        obtenerProductosDesdeBD()
     }
 
     private fun setupRecyclerView() {
         // Configura tu RecyclerView aquí
         // Puedes usar el adaptador y el diseño que ya has creado
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewProductos)
+        recyclerViewProductos = findViewById(R.id.recyclerViewProductos)
+        adaptadorProductos = AdaptadorProductos(listaProductos)
+        recyclerViewProductos.layoutManager = LinearLayoutManager(this)
+        recyclerViewProductos.adapter = adaptadorProductos
 
 
-
-        val productosAdapter = AdaptadorProductos(obtenerProductosDesdeBD())
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = productosAdapter
+        adaptadorProductos?.onItemClickListener = object : AdaptadorProductos.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                val producto = adaptadorProductos?.getProductAtPosition(position)
+                producto?.enCarrito = !producto?.enCarrito!!
+                adaptadorProductos?.notifyDataSetChanged()
+            }
+        }
     }
 
-    private fun obtenerProductosDesdeBD(): List<Producto> {
-        val listaProductos = mutableListOf<Producto>()
-
+    private fun obtenerProductosDesdeBD() {
         // Obtener la base de datos en modo lectura
         val db = bdRegistro.readableDatabase
 
@@ -101,9 +106,7 @@ class Productos : AppCompatActivity() {
         db.close()
 
         // Notificar al adaptador que los datos han cambiado
-        adaptadorProductos?.notifyDataSetChanged()
-
-        return listaProductos
+        adaptadorProductos.notifyDataSetChanged()
     }
 
 

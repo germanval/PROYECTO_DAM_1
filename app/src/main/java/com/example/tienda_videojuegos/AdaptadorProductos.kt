@@ -8,12 +8,17 @@ import androidx.recyclerview.widget.RecyclerView
 
 class AdaptadorProductos(private val listaProductos: List<Producto>) :
     RecyclerView.Adapter<AdaptadorProductos.ProductoViewHolder>() {
+    var onItemClickListener: OnItemClickListener? = null
 
     class ProductoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val consolaTextView: TextView = itemView.findViewById(R.id.textViewNombre)
         val precioTextView: TextView = itemView.findViewById(R.id.textViewPrecio)
         val tipoTextView: TextView = itemView.findViewById(R.id.textViewTipo)
         val imagenImageView: ImageView = itemView.findViewById(R.id.imageViewProducto)
+    }
+
+    fun getProductAtPosition(position: Int): Producto {
+        return listaProductos[position]
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductoViewHolder {
@@ -32,4 +37,18 @@ class AdaptadorProductos(private val listaProductos: List<Producto>) :
     }
     override fun getItemCount(): Int = listaProductos.size
 
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        // Resto del código...
+
+        init {
+            itemView.setOnClickListener {
+                onItemClickListener?.onItemClick(adapterPosition)
+            }
+        }
+    }
 }

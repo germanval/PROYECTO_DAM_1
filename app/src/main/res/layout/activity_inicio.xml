@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="10dp"
+            android:textColor="#FFFFFF"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="220dp"
@@ -79,6 +80,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
+            android:textColor="#FFFFFF"
             android:layout_marginRight="220dp"
             android:layout_marginBottom="8dp"
             android:height="48dp"
@@ -106,6 +108,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
+            android:textColor="#FFFFFF"
             android:layout_marginRight="220dp"
             android:layout_marginBottom="8dp"
             android:height="48dp"
@@ -133,6 +136,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
+            android:textColor="#FFFFFF"
             android:layout_marginRight="220dp"
             android:layout_marginBottom="8dp"
             android:height="48dp"
@@ -157,6 +161,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:gravity="center"
+            android:background="#000000"
             android:orientation="horizontal">
 
 
@@ -168,7 +173,7 @@
                 android:background="@drawable/rounded_button"
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="Grabar"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:padding="3dp"
                 android:layout_marginEnd="5dp" />
 
@@ -179,7 +184,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/rounded_button"
                 android:fontFamily="sans-serif-smallcaps"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:text="Volver"
                 android:padding="3dp"
                 android:layout_marginStart="5dp" />

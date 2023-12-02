@@ -6,6 +6,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.tienda_videojuegos.R
 import android.widget.Button
 import android.content.Intent
+import java.util.*
 
 
 class PrincipalActivity : AppCompatActivity() {
@@ -14,14 +15,18 @@ class PrincipalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
 
-        // Inicializar el ViewPager2 y la lista de imágenes después de establecer el contenido
+
+
+
         val viewPager = findViewById<ViewPager2>(R.id.viewPager)
         val imageList = listOf(
 
-            R.drawable.imagen1,
-            R.drawable.imagen2,
-            R.drawable.imagen3
+            R.drawable.banner1,
+            R.drawable.banner2,
+            R.drawable.banner3,
         )
+
+
 
         val imageSliderAdapter = ImageSliderAdapter(this, imageList)
         viewPager.adapter = imageSliderAdapter

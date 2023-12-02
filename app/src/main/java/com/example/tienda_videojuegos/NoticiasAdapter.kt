@@ -35,8 +35,8 @@ class NoticiasAdapter(private var noticias: List<Noticia>) : RecyclerView.Adapte
         private val autorTextView: TextView = itemView.findViewById(R.id.textViewAutor)
 
         fun bind(noticia: Noticia) {
-            tituloTextView.text = noticia.title
-            autorTextView.text = noticia.author
+            tituloTextView.text ="Título : ${noticia.title}"
+            autorTextView.text ="Autor : ${noticia.author}"
         }
     }
 

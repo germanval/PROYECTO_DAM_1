@@ -22,7 +22,7 @@ class RegistroActivity : AppCompatActivity() {
             val username = findViewById<EditText>(R.id.editTextUsername).text.toString()
             val password = findViewById<EditText>(R.id.editTextPassword).text.toString()
 
-            // Realiza el registro o lógica necesaria aquí
+
             val registroExitoso = dbHelper.registerUser(username, password)
             if (registroExitoso) {
                 // Limpia los campos de texto
@@ -34,7 +34,7 @@ class RegistroActivity : AppCompatActivity() {
             } else {
                 tvRegistroExitoso.text = "¡Error en el registro!"
             }
-
+            tvRegistroExitoso.text = "¡Completa todos los campos!"
 
 
 
